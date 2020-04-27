@@ -10,8 +10,8 @@ class USE:
         self.USE = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
 
     def embed(self, s):
-        return self.USE([s])[0]
+        return self.USE([s]).eval()[0]
 
     def batch_embed(self, sentences):
-        return self.USE(sentences)
+        return self.USE(sentences).eval()
 
